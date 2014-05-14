@@ -1,0 +1,24 @@
+﻿<Window x:Class="UnitTestEvalualtion.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:UnitTestEvalualtion.ViewModel"
+        Title="MainWindow" Height="80" Width="525">
+    <Window.Resources>
+        <vm:ViewModel x:Key="ViewModel" />
+    </Window.Resources>
+    <Grid Margin="3" DataContext="{StaticResource ViewModel}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBox Grid.Column="0" Margin="3" Text="{Binding VarA, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Grid.Column="1" Content="{Binding Calculus}" Margin="3" Command="{Binding ChangeCalculusCommand}" />
+        <TextBox Grid.Column="2" Margin="3" Text="{Binding VarB, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Grid.Column="3" Content="=" Margin="3" Command="{Binding CalculateCommand}" />
+        <TextBox Grid.Column="4" Margin="3" Text="{Binding Result}" />
+
+    </Grid>
+</Window>
