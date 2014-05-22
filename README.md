@@ -30,3 +30,6 @@ The ViewModel also creates an instance of the Model. In a project this small
 it would almost make more sence not to have any model at all and just add or subtract
 the numbers in the ViewModel. However, this project is created to evaluate how to
 work with the unit test in VS, so don't case about how stupid the model is.
+
+!!! The project uses NUnit, which should be downloaded automatically of you have
+!!! NuGet installed.
